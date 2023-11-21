@@ -1,0 +1,26 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "name": "Обувь",
+      "description": "Большой выбор выбор обуви на любой вкус"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "name": "Одежда",
+      "description": "Одежда для спорта и активного отдыха"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+      "name": "Аксессуары",
+      "description": "Широкий ассортимент аксессуаров. Все модели выполнены из качественных материалов"
+    }
+  }
+]
