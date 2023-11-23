@@ -1,14 +1,12 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Skystore</title>
-    <link href="/static/css/bootstrap.min.css" rel="stylesheet">
+    <meta charset="UTF-8">
+    <title>Title</title>
 </head>
 <body>
 <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
-    <h5 class="my-0 mr-md-auto font-weight-normal">Skystore</h5>
+    <h10 class="my-0 mr-md-auto font-weight-normal">Market</h10>
     <nav class="ms-5">
         <a class="p-2 btn btn-outline-primary" href="/">Каталог</a>
         <a class="p-2 btn btn-outline-primary" href="/contacts/">Контакты</a>
@@ -49,23 +47,27 @@
                 <div class="card-body">
                     <form method="post" action="" class="form-floating">
                         {% csrf_token %}
+                        <br>
                         <div class="mb-3">
-                            <label for="name">Имя</label>
+                            <label form="name">Имя</label>
                             <br>
-                            <input type="text" name="name" class="form-control" id="name" placeholder="Ваше имя" required>
-                        </div>
-                        <div class="mb-3">
-                            <label form="email">Email</label>
-                            <br>
-                            <input type="text" name="email" class="form-control" id="email" placeholder="Ваш Email" required>
-                        </div>
-                        <div class="mb-3">
-                            <label for="message">Сообщение</label>
-                            <br>
-                            <textarea type="text" name="message" class="form-control" id="message" placeholder="Ваше сообщение" required></textarea>
+                            <input type="text" name="name" class="form-control" id="name" placeholder="Ваше имя"
+                                   required/><br>
+                            <div class="mb-3">
+                                <label form="email">Email</label>
+                                <br>
+                                <input type="email" name="email" class="form-control" id="email" placeholder="Ваш email"
+                                       required"/><br>
+                                <div class="mb-3">
+                                    <label form="message">Сообщение</label>
+                                    <br>
+                                    <textarea name="message" class="form-control" id="message"
+                                              placeholder="Ваше сообщение" required></textarea>
+                                    <input type="submit" value="Отправить">
+                                </div>
+                            </div>
                         </div>
                     </form>
-                    <input type="submit" value="Отправить">
                 </div>
             </div>
         </div>
@@ -74,7 +76,7 @@
     <footer class="pt-4 my-md-5 pt-md-5 border-top">
         <div class="row">
             <div class="col-12 col-md">
-                SkyStore
+                Market
                 <small class="d-block mb-3 text-muted">&copy; 2023</small>
             </div>
             <div class="col-6 col-md">
@@ -104,5 +106,6 @@
 </div>
 
 <script src="/static/js/bootstrap.bundle.min.js"></script>
+
 </body>
 </html>
