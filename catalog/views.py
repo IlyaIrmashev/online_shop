@@ -31,7 +31,7 @@ def home(request):
 def categories(request):
     context = {
         'object_list': Category.objects.all(),
-        'title': 'Наши товары'
+        'title': 'Категории'
     }
     return render(request, 'catalog/category.html', context)
 
@@ -39,7 +39,7 @@ def categories(request):
 def catalog_product(request, pk):
     catalog_item = Category.objects.get(pk=pk)
     context = {
-        'object_list': Product.objects.filter(category_id=pk),
+        'object_list': Product.objects.filter(pk=pk),
         'title': f'Наши товары {catalog_item.name}'
     }
     return render(request, 'catalog/product.html', context)
