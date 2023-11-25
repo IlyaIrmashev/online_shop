@@ -36,10 +36,10 @@ def categories(request):
     return render(request, 'catalog/category.html', context)
 
 
-def catalog_product(request, pk):
-    catalog_item = Category.objects.get(pk=pk)
+def product_detail(request, pk):
+    product = Product.objects.get(pk=pk)
     context = {
-        'object_list': Product.objects.filter(pk=pk),
-        'title': f'Наши товары {catalog_item.name}'
+        'object': product,
+        'title': f'Товар: {product.name}'
     }
     return render(request, 'catalog/product.html', context)
