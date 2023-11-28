@@ -1,0 +1,22 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-12">
+            <div class="card box-shadow mr-4">
+                <div class="card-header mb-3"><h3>Создание статьи</h3></div>
+                <form method="post" class="mx-3" enctype="multipart/form-data">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-success mb-3">
+                        {% if object %}
+                        Изменить статью
+                        {% else %}
+                        Создать статью
+                        {% endif %}
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

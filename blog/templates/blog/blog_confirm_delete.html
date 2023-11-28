@@ -1,0 +1,17 @@
+{% extends 'blog/base.html' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-12">
+            <div class="card box-shadow mr-4">
+                <div class="card-header mb-3"><h3>Удаление статьи</h3></div>
+                <form method="post" class="mx-3">
+                    {% csrf_token %}
+                    <p>Уверены, что хотите удалить статью "{{ object.title }}"?</p>
+                    <button type="submit" class="btn btn-danger mb-3">Да, удалить</button>
+                    <a class="btn btn-success mb-3" href="{% url 'blog:article_list' %}">Нет</a>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock %}

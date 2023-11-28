@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.views.generic import ListView, DetailView
 
 from catalog.models import Category, Contacts, Product
 
@@ -20,26 +21,19 @@ def contacts(request):
     return render(request, 'catalog/contacts.html', context)
 
 
-def home(request):
-    context = {
-        'object_list': Category.objects.all()[:4],
-        'title': 'SkyStore'
-    }
-    return render(request, 'catalog/home.html', context)
+class HomeListView(ListView):
+    model = Category
+    template_name = 'catalog/home.html'
+    extra_context = {'title': 'Главная'}
 
 
-def categories(request):
-    context = {
-        'object_list': Category.objects.all(),
-        'title': 'Категории'
-    }
-    return render(request, 'catalog/category.html', context)
+class CategoriesListView(ListView):
+    model = Category
+    template_name = 'catalog/category.html'
+    extra_context = {'title': 'Категории'}
 
 
-def product_detail(request, pk):
-    product = Product.objects.get(pk=pk)
-    context = {
-        'object': product,
-        'title': f'Товар: {product.name}'
-    }
-    return render(request, 'catalog/product.html', context)
+class ProductDetailView(DetailView):
+    model = Product
+    template_name = 'catalog/product.html'
+

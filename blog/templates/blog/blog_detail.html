@@ -1,0 +1,36 @@
+{% extends 'blog/base.html' %}
+{% block content %}
+
+{% load my_tags %}
+<div class="row text-start">
+    <div class="col-lg-12 col-md-6 col-sm-12">
+        <div class="card box-shadow">
+            <div class="card-body">
+                <div class="card-header"><h1 class="text-center">{{ object.title }} ({{ object.slug }})</h1></div>
+                <table class="table table-striped">
+                    <img class="card-img-top"
+                         src="{{ object.picture|my_media }}"
+                         alt="Card image cap">
+            </div>
+            <tr>
+                <p class="mt-3 text-justify">{{ object.content }}</p>
+            </tr>
+            <tr>
+                <td class="w-25">Статья создана</td>
+                <td>{{ object.created_at }}</td>
+            </tr>
+            <tr>
+                <td class="w-25">Количество просмотров</td>
+                <td>{{ object.views_count }}</td>
+            </tr>
+            </table>
+            <a href="{% url 'blog:article_list' %}" class="btn btn-outline-dark">Назад </a>
+        </div>
+
+    </div>
+
+</div>
+
+</div>
+
+{% endblock %}

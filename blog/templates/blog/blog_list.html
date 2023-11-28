@@ -1,0 +1,42 @@
+{% extends 'blog/base.html' %}
+{% load my_tags %}
+{% block content %}
+<div class="col-12 mb-3">
+    <a class="btn btn-outline-dark" href="{% url 'blog:create' %}">Добавить статью</a>
+</div>
+<div class="row text-center">
+    {% for article in object_list %}
+    <div class="col-12">
+        <div class="card mb-4 box-shadow">
+            <div class="card-header">
+                <h4 class="my-2 font-weight-normal text-center">
+                    {{ article.title|truncatechars:250 }}</h4>
+                <img class="card-img-top"
+                     src="{{ object.picture|my_media }}"
+                     alt="Card image cap">
+            </div>
+            <div class="card-body">
+                <h1 class="card-title pricing-card-title">{{ article.created_date }}</h1>
+                <ul class="list-unstyled mt-3 mb-4 text-start m-3">
+                    <li>{{ article.content|truncatechars:500 }}</li>
+                </ul>
+                <div class="d-block align-items-center">
+                    <div class="btn-group" role="group" aria-label="Basic outlined example">
+                        <a href="{% url 'blog:article' article.pk %}">
+                            <button class="btn btn-outline-dark" type="button">Подробнее</button>
+                        </a>
+                        <a href="{% url 'blog:update' article.pk %}">
+                            <button class="btn btn-outline-dark" type="button">Изменить</button>
+                        </a>
+                        <a href="{% url 'blog:delete' article.pk %}">
+                            <button class="btn btn-outline-danger" type="button">Удалить</button>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+
+{% endblock %}
