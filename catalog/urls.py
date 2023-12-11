@@ -1,7 +1,8 @@
 from django.urls import path
 
 from catalog.apps import CatalogConfig
-from catalog.views import contacts, HomeListView, ProductDetailView, CategoriesListView
+from catalog.views import contacts, HomeListView, ProductDetailView, CategoriesListView, ProductCreateView, \
+    ProductUpdateView, ProductDeleteView
 
 # В корневом файле urls.py, который находится в директории с настройками проекта, необходимо
 # описать новый маршрут, но вместо контроллера указать специальную функцию include.
@@ -14,4 +15,9 @@ urlpatterns = [
     path('contacts/', contacts, name='contacts'),
     path('categories/', CategoriesListView.as_view(), name='categories'),
     path('<int:pk>/product/', ProductDetailView.as_view(), name='product_detail'),
+    path('product_create/', ProductCreateView.as_view(), name='product_create'),
+    path('product/<int:pk>/product_update/', ProductUpdateView.as_view(), name='product_update'),
+    path('product/delete/<int:pk>', ProductDeleteView.as_view(), name='delete_product'),
 ]
+
+
