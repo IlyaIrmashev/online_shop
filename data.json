@@ -1,7 +1,7 @@
 [
   {
     "model": "catalog.category",
-    "pk": 1,
+    "pk": 4,
     "fields": {
       "name": "Обувь",
       "description": "Большой выбор выбор обуви на любой вкус"
@@ -9,7 +9,7 @@
   },
   {
     "model": "catalog.category",
-    "pk": 2,
+    "pk": 5,
     "fields": {
       "name": "Одежда",
       "description": "Одежда для спорта и активного отдыха"
@@ -17,10 +17,202 @@
   },
   {
     "model": "catalog.category",
-    "pk": 3,
+    "pk": 6,
     "fields": {
       "name": "Аксессуары",
       "description": "Широкий ассортимент аксессуаров. Все модели выполнены из качественных материалов"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "name": "Кроссовки мужские PUMA",
+      "description": "Классический силуэт кроссовок, дополненный функциональной отделкой задника, не оставит равнодушным истинного ценителя спортивного стиля.",
+      "picture": "",
+      "category": 4,
+      "price": 1500,
+      "date_creation": "2023-11-23",
+      "date_last_modified": "2023-11-23"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "name": "Кеды мужские PUMA",
+      "description": "Кеды настолько универсальны, что ты можешь носить их действительно где захочешь.",
+      "picture": "products/83335330299.jpg",
+      "category": 4,
+      "price": 2000,
+      "date_creation": "2023-11-23",
+      "date_last_modified": "2023-11-23"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "name": "Кроссовки мужские Reebok",
+      "description": "Твой стиль — твои правила! Добавь в свой повседневный образ кроссовки Reebok, которые подчеркнут твою индивидуальность и обеспечат комфорт.",
+      "picture": "products/85776820299.jpg",
+      "category": 4,
+      "price": 2500,
+      "date_creation": "2023-11-23",
+      "date_last_modified": "2023-11-23"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "name": "Куртка утепленная мужская adidas Ess",
+      "description": "Отправиться на прогулку или отлично провести время с друзьями на свежем воздухе поможет стильная утепленная куртка от adidas.",
+      "picture": "products/106612980299.jpg",
+      "category": 5,
+      "price": 4000,
+      "date_creation": "2023-11-23",
+      "date_last_modified": "2023-12-14"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "name": "Худи мужская FILA",
+      "description": "Худи оверсайз из базовой линейки FILA — то что нужно для создания образа в спортивном стиле.",
+      "picture": "products/79353140299.jpg",
+      "category": 5,
+      "price": 3000,
+      "date_creation": "2023-11-23",
+      "date_last_modified": "2023-11-23"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+      "name": "Брюки мужские PUMA",
+      "description": "Брюки PUMA в классическом стиле бренда — отличная основа твоего спортивного образа.",
+      "picture": "products/49525920299.jpg",
+      "category": 5,
+      "price": 2500,
+      "date_creation": "2023-11-23",
+      "date_last_modified": "2023-11-23"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+      "name": "Шапка мужская Demix",
+      "description": "Комфортная шапка Demix из мягкой акриловой пряжи — отличный выбор для тренировок в прохладную погоду.",
+      "picture": "products/83909670299.jpg",
+      "category": 6,
+      "price": 500,
+      "date_creation": "2023-11-23",
+      "date_last_modified": "2023-11-23"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 8,
+    "fields": {
+      "name": "Перчатки Outventure",
+      "description": "Комфортные флисовые перчатки Outventure для активного отдыха и путешествий. Резинка на запястье с тыльной стороны ладони помогает лучше сохранить тепло и защищает от снега.",
+      "picture": "products/70831280299.jpg",
+      "category": 6,
+      "price": 400,
+      "date_creation": "2023-11-23",
+      "date_last_modified": "2023-11-23"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 9,
+    "fields": {
+      "name": "Рюкзак Kappa",
+      "description": "Рюкзак от Kappa — отличный вариант для тех, кто предпочитает активный образ жизни. Объема в 15 л. вполне достаточно, чтобы захватить с собой все важные мелочи и сменную одежду для тренировок. 3 отдельных кармана позволяют не перепутать вещи. Регулируемые лямки обеспечивают удобную посадку, а вентилируемая спинка — дополнительный комфорт.",
+      "picture": "products/80480380299.jpg",
+      "category": 6,
+      "price": 1000,
+      "date_creation": "2023-11-23",
+      "date_last_modified": "2023-11-23"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 20,
+    "fields": {
+      "name": "test",
+      "description": "11",
+      "picture": "",
+      "category": 6,
+      "price": 12,
+      "date_creation": "2023-12-11",
+      "date_last_modified": "2023-12-11"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 28,
+    "fields": {
+      "name": "test",
+      "description": "123",
+      "picture": "products/Без_названия.png",
+      "category": 6,
+      "price": 12434,
+      "date_creation": "2023-12-12",
+      "date_last_modified": "2023-12-12"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 30,
+    "fields": {
+      "name": "test",
+      "description": "123",
+      "picture": "",
+      "category": 6,
+      "price": 124344444,
+      "date_creation": "2023-12-12",
+      "date_last_modified": "2023-12-12"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 31,
+    "fields": {
+      "name": "123",
+      "description": "123",
+      "picture": "",
+      "category": 6,
+      "price": 123,
+      "date_creation": "2023-12-12",
+      "date_last_modified": "2023-12-12"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 32,
+    "fields": {
+      "name": "test",
+      "description": "test",
+      "picture": "",
+      "category": 6,
+      "price": 12341,
+      "date_creation": "2023-12-13",
+      "date_last_modified": "2023-12-13"
+    }
+  },
+  {
+    "model": "catalog.version",
+    "pk": 1,
+    "fields": {
+      "product": 4,
+      "number_version": "1",
+      "name_version": "1",
+      "is_current_version": true
     }
   }
 ]
