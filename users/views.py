@@ -77,15 +77,15 @@ def generate_new_password(request):
 
 
 def activate(request, uidb64, token):
-    user = get_user_model()
+    new_user = get_user_model()
     try:
         uid = force_str(urlsafe_base64_decode(uidb64))
-        user = user.objects.get(pk=uid)
+        new_user = new_user.objects.get(pk=uid)
     except(TypeError, ValueError, OverflowError, User.DoesNotExist):
-        user = None
-        if user is not None and account_activation_token.check_token(user, token):
-            user.is_active = True
-            user.save()
-            return HttpResponse("Account activated successfully")
-        else:
-            return HttpResponse("Activation link is invalid")
+        new_user = True
+    if new_user is not None and account_activation_token.check_token(new_user, token):
+        new_user.is_active = True
+        new_user.save()
+        return redirect(reverse_lazy('users:success_verify'))
+    else:
+        return redirect(reverse_lazy('users:success_verify'))
