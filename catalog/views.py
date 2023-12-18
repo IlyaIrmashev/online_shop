@@ -1,8 +1,9 @@
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.forms import inlineformset_factory
+from django.http import Http404
 from django.shortcuts import render
 from django.urls import reverse_lazy, reverse
-from catalog.forms import ProductForm, VersionForm
+from catalog.forms import ProductForm, VersionForm, ProductForms
 from django.views.generic import ListView, DetailView, DeleteView, UpdateView, CreateView
 
 from catalog.models import Category, Contacts, Product, Version
@@ -83,6 +84,19 @@ class ProductUpdateView(LoginRequiredMixin, UpdateView):
             formset.save()
 
         return super().form_valid(form)
+
+    def get_object(self, queryset=None):
+        self.object = super().get_object(queryset)
+        if not self.request.user.is_staff and not self.request.user.is_superuser and self.request.user != self.object.user:
+            raise Http404
+        return self.object
+
+    def get_form_class(self):
+        if self.request.user.is_staff:
+            return ProductForms
+        else:
+            return ProductForm
+
 
 
 class ProductDeleteView(LoginRequiredMixin, DeleteView):

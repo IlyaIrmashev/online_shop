@@ -26,8 +26,10 @@ class Product(models.Model):
     price = models.IntegerField(verbose_name='цена за покупку')
     date_creation = models.DateField(auto_now_add=True, verbose_name='дата создания')
     date_last_modified = models.DateField(auto_now=True, verbose_name='дата последнего изменения')
+    user = models.ForeignKey(User, default=1, on_delete=models.CASCADE, verbose_name='Создал')
+    is_published = models.BooleanField(default=True, verbose_name='статус публикации')
 
-    anonymous_users = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, **NULLABLE, verbose_name='анонимный пользователь')
+    #anonymous_users = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.SET_NULL, **NULLABLE, verbose_name='анонимный пользователь')
 
     def __str__(self):
         return f'{self.name} {self.price}'

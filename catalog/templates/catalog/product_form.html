@@ -18,6 +18,8 @@
                     {% if object %}
                     Сохранить
                     {% else %}
+                    {% if  perms.catalog.change_versions %}
+                    {% endif %}
                     Добавить
                     {% endif %}
                 </button>
