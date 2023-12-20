@@ -7,6 +7,7 @@ from catalog.forms import ProductForm, VersionForm, ProductForms
 from django.views.generic import ListView, DetailView, DeleteView, UpdateView, CreateView
 
 from catalog.models import Category, Contacts, Product, Version
+from catalog.services import get_some_cache
 
 
 # Create your views here.
@@ -35,7 +36,10 @@ class HomeListView(ListView):
 class CategoriesListView(ListView):
     model = Category
     template_name = 'catalog/category.html'
-    extra_context = {'title': 'Категории'}
+    extra_context = {
+        'object_list': get_some_cache(),
+        'title': 'Категории'
+    }
 
 
 class ProductDetailView(DetailView):
